@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE tiles-definitions PUBLIC 
+          "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+          "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <!-- Base default User Page Layoyts -->
+    <definition name="base.dashboardPage"
+                template="/layouts/factoryDreamDesign/layoutFactoryDreamHomePage.jsp">
+        <put-attribute name="title"         value="" />
+        <put-attribute name="header"        value="" />
+        <put-attribute name="navMenuTop"    value="" />
+        <put-attribute name="navMenuLeft"   value="" />
+        <put-attribute name="body"          value="" />
+        <put-attribute name="javaScript"    value="" />
+    </definition>
+    
+    <!-- home page -->    
+    <definition name="home" extends="base.dashboardPage">
+        <put-attribute name="title"         value="Home Page"/>  
+        <put-attribute name="header"        value="/backend/tiles/header/header.jsp" /> 
+        <put-attribute name="navMenuTop"    value="/backend/tiles/menu/menuTop.jsp" />
+        <put-attribute name="navMenuLeft"   value="/backend/tiles/menu/menuLeft.jsp" />
+        <put-attribute name="body"          value="/backend/tiles/body/bodyHome.jsp" />
+        <put-attribute name="javaScript"    value="/backend/tiles/jsScripts/javaScriptsSource.jsp" />
+    </definition>
+    
+    <!-- login page -->
+    <definition name="login" extends="base.loginpage">
+        <put-attribute name="title" value="Login Page"/>
+        <put-attribute name="body"  value="/backend/tiles/body/bodyLogin.jsp"/>
+    </definition>
+       
+       
+    <!-- Base login Page Layoyts -->
+    <definition name="base.loginpage"
+                template="/layouts/factoryDreamDesign/layoutFactoryDreamLoginPage.jsp">
+        <put-attribute name="title"  value="" />
+        <put-attribute name="body"   value="" />
+
+    </definition>
+       
+</tiles-definitions>

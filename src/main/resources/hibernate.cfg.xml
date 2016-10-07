@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://172.18.111.101:1433;databaseName=iBancRM</property>
+        <property name="hibernate.connection.username">maib-dds</property>
+        <property name="hibernate.connection.password">p@ssw0rd</property>
+        <mapping class="md.ibanc.rm.entities.Accounts"/>
+        <mapping class="md.ibanc.rm.entities.Status"/>
+        <mapping class="md.ibanc.rm.entities.ExchangeRate"/>
+        <mapping class="md.ibanc.rm.entities.Valuta"/>
+        <mapping class="md.ibanc.rm.entities.Languages"/>
+        <mapping class="md.ibanc.rm.entities.LocationOffers"/>
+        <mapping class="md.ibanc.rm.entities.CustomerActions"/>
+        <mapping class="md.ibanc.rm.entities.PasswordsHistory"/>
+        <mapping class="md.ibanc.rm.entities.Sysdiagrams"/>
+        <mapping class="md.ibanc.rm.entities.Branches"/>
+        <mapping class="md.ibanc.rm.entities.Location"/>
+        <mapping class="md.ibanc.rm.entities.WrongPassword"/>
+        <mapping class="md.ibanc.rm.entities.Types"/>
+        <mapping class="md.ibanc.rm.entities.Devices"/>
+        <mapping class="md.ibanc.rm.entities.Users"/>
+        <mapping class="md.ibanc.rm.entities.Customers"/>
+        <mapping class="md.ibanc.rm.entities.CustomerAccount"/>
+        <mapping class="md.ibanc.rm.entities.City"/>
+        <mapping class="md.ibanc.rm.entities.Manufacturer"/>
+        <mapping class="md.ibanc.rm.entities.Transactions"/>
+        <mapping class="md.ibanc.rm.entities.TerminalTypes"/>
+        <mapping class="md.ibanc.rm.entities.SingInOutSessions"/>
+        <mapping class="md.ibanc.rm.entities.Offer"/>
+        <mapping class="md.ibanc.rm.entities.News"/>
+        <mapping class="md.ibanc.rm.entities.Services"/>
+        <mapping class="md.ibanc.rm.entities.UserRoles"/>
+        <mapping class="md.ibanc.rm.entities.NetworkOperatorManufacturer"/>
+        <mapping class="md.ibanc.rm.entities.StateTransaction"/>
+        <mapping class="md.ibanc.rm.entities.Sessions"/>
+        <mapping class="md.ibanc.rm.entities.Terminals"/>
+        <mapping class="md.ibanc.rm.entities.NetworkOperator"/>
+        <mapping class="md.ibanc.rm.entities.form.LoginForm"/>
+        <mapping class="md.ibanc.rm.entities.utils.BaseEntity"/>
+        <mapping class="md.ibanc.rm.entities.utils.CustomersDetails"/>
+    
+        <mapping class="md.ibanc.rm.entities.Message"/>
+        <mapping class="md.ibanc.rm.entities.SendMessage"/>
+        <mapping class="md.ibanc.rm.entities.TypeMessage"/>
+    
+    
+    </session-factory>
+</hibernate-configuration>

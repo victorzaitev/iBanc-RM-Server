@@ -1,0 +1,69 @@
+<form name="userSetingsForm" class="form-compact" role="form" novalidate>
+<fieldset>
+
+<legend class="text-info" >User status: <strong> Status </strong> </legend>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12" ng-class="{'has-error': userSetingsForm.employeeFirstName.$invalid && !userSetingsForm.employeeFirstName.$pristine}">
+  <label for="employeeFirstName">First Name</label>  
+  <input id="employeeFirstName" name="employeeFirstName" placeholder="First Name" ng-model="employeeFirstName" ng-pattern="FL_NamePattern" class="form-control input-sm" type="text" required>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12" ng-class="{'has-error': userSetingsForm.employeeLastName.$invalid && !userSetingsForm.employeeLastName.$pristine}">
+  <label  for="employeeLastName">Last Name</label>  
+  <input id="employeeLastName" name="employeeLastName" ng-model="employeeLastName" ng-pattern="FL_NamePattern" placeholder="Last Name" class="form-control input-sm" type="text" required>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12" ng-class="{'has-error': userSetingsForm.employeeBirthDate.$invalid && !userSetingsForm.employeeBirthDate.$pristine}">
+  <label  for="employeeBirthDate">Birth Date</label>  
+  <input id="employeeBirthDate" name="employeeBirthDate" ng-model="employeeBirthDate" placeholder="Birth Date" class="form-control input-sm" type="text" required>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12"  ng-class="{'has-error': userSetingsForm.employeeEmail.$invalid && !userSetingsForm.employeeEmail.$pristine}">
+  <label  for="employeeEmail">Email</label>  
+  <input id="employeeEmail" name="employeeEmail" placeholder="Email" ng-pattern="emailPattern" class="form-control input-sm" type="email" ng-model="employeeEmail">
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12" ng-class="{'has-error': userSetingsForm.employeeAddress.$invalid && !userSetingsForm.employeeAddress.$pristine}">
+  <label  for="employeeAddress">Address</label>  
+  <input id="employeeAddress" name="employeeAddress" placeholder="Address" ng-pattern="addressPattern" class="form-control input-sm" type="text" required>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12" ng-class="{'has-error': userSetingsForm.employeeBirthDate.$invalid && !userSetingsForm.employeeBirthDate.$pristine}">
+<label for="employeePhonenumber">Phonenumber</label>  
+  <input id="employeePhonenumber" name="employeePhonenumber" placeholder="Phonenumber" class="form-control input-sm" type="text" ng-p>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12">
+  <label  for="employeeHireDate">Hire Date</label>  
+  <p id="employeeHireDate"> Employee Hire Date </p>
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12">
+  <label  for="departmentName">Department</label>
+  <p id="departmentName" >Department Name</p>
+  <!--<input id="departmentName" name="departmentName" placeholder="placeholder" class="form-control input-sm" type="text">-->
+</div>
+
+<div class="form-group col-md-4 col-sm-4 col-xs-12">
+  <label  for="managerFirstLastName">Manager</label>
+  <p id="managerFirstLastName" >Manager FirstLastName</p>
+</div>
+
+<div class="form-group col-md-6 col-sm-12 col-xs-12">
+  <label  for="jobsName">Jobs</label>  
+  <p id="jobsName" >Employee Jobs</p>
+</div>
+
+<div class="form-group col-md-6 col-sm-12 col-xs-12">
+  <label for="employeeNote">Note</label>
+  <p id="employeeNote" >Employee Note</p>
+</div>
+
+<div class="text-right form-group col-md-12 col-sm-12 col-xs-12">
+    <hr>
+    <button type="button"  class="btn btn-sm btn-default">Reset</button>
+    <button type="button" ng-disabled="userSetingsForm.$invalid" ng-click="submitForm(userSetingsForm.$valid)"  class="btn btn-sm btn-primary">Update</button>
+</div>
+
+</fieldset>
+</form>

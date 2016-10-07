@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+    <schema-selection match-catalog="iBancRM"/>
+    
+    <table-filter match-name="CustomerActions"/>
+    <table-filter match-name="TerminalTypes"/>
+    <table-filter match-name="Location"/>
+    <table-filter match-name="SingInOutSessions"/>
+    <table-filter match-name="City"/>
+    <table-filter match-name="News"/>
+    <table-filter match-name="Types"/>
+    <table-filter match-name="Devices"/>
+    <table-filter match-name="Valuta"/>
+    <table-filter match-name="NetworkOperatorManufacturer"/>
+    <table-filter match-name="sysdiagrams"/>
+    <table-filter match-name="Terminals"/>
+    <table-filter match-name="ExchangeRate"/>
+    <table-filter match-name="Manufacturer"/>
+    <table-filter match-name="Cards"/>
+    <table-filter match-name="Branches"/>
+    <table-filter match-name="Customers"/>
+    <table-filter match-name="UserRoles"/>
+    <table-filter match-name="NetworkOperator"/>
+    <table-filter match-name="PasswordsHistory"/>
+    <table-filter match-name="Accounts"/>
+    <table-filter match-name="Sessions"/>
+    <table-filter match-name="WrongPassword"/>
+    <table-filter match-name="Services"/>
+    <table-filter match-name="Languages"/>
+    <table-filter match-name="LocationOffers"/>
+    <table-filter match-name="CustomerAccount"/>
+    <table-filter match-name="Transactions"/>
+    <table-filter match-name="Users"/>
+    <table-filter match-name="Offer"/>
+    <table-filter match-name="Status"/>
+    <table-filter match-name="StateTransaction"/>
+    <table-filter match-name="TypeMessage"/>
+    <table-filter match-name="Message"/>
+    <table-filter match-name="SendMessage"/>
+  
+  
+</hibernate-reverse-engineering>

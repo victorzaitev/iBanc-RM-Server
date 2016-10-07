@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h3 class="modal-title pull-left">Notes</h3>
+    <div class="clear-both"></div>
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="note in gridOrderNotes| orderBy:'nameGroups'">
+                    <td>{{ note.nameGroups}}</td>
+                    <td>
+                        <p><span class="text-muted" >{{ note.firstName}}</span></p>
+                        {{ note.note}}
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="closeModal()">Close</button>
+</div>

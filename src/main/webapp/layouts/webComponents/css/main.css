@@ -1,0 +1,54 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.login-panel {
+    margin-top: 25%;
+}
+
+textarea.non-resize {
+    resize: none;
+    min-height: 50px;
+    margin-bottom: 5px !important;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.padding-5px{
+    padding: 5px !important;
+}
+
+.marginBottom-0px{
+    margin-bottom: 0px !important;
+}
+
+.marginBottomTop-5px{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.panel-collapse .panel-body{
+    max-height: 100px !important;
+    overflow-y: auto !important;
+}
+
+.panel-body-height150px-overflow{
+    height: 100px !important;
+    overflow-y: auto !important;
+    width: 100% !important;
+}
+
+.row-marginTop-10px{
+    margin-top: 10px !important;
+}
+
+.progress {
+    background: rgba(245, 245, 245, 1);
+    border: 0px solid rgba(245, 245, 245, 1);
+    border-radius: 10px; height: 5px;
+}
+.progress-bar-custom {
+    background: rgba(66, 139, 202, 1);
+}

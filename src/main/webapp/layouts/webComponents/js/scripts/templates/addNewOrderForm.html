@@ -1,0 +1,114 @@
+<div class="modal-header">
+    <h3 class="modal-title pull-left">New Order</h3>
+    <div class="clear-both"></div>
+</div>
+<div class="modal-body">
+
+    <form class="form-horizontal" name="addNewOrderForm" ng-submit="addNewOrderFormSubmit(addNewOrderForm.$valid)">
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="OrderData">Data</label>
+            <div class="col-sm-10">
+                <p class="input-group marginBottom-0px">
+                    <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-focus="openDataPicker()" ng-model="newOrder.orderData" is-open="orderDataPopup.opened" datepiker-option="dateOption" close-text="Close" required />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-outline btn-sm" ng-click="openDataPicker()" ><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="OrderDelivery">Delivery</label>
+            <div class="col-sm-10">
+                <p class="input-group marginBottom-0px">
+                    <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-focus="openDeliveryPicker()" ng-model="newOrder.delivery" is-open="orderDeliveryPopup.opened" datepiker-option="dateOption" close-text="Close" required />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-outline btn-sm" ng-click="openDeliveryPicker()" ><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="form-group form-group-sm">
+            <label for="Customer" class="col-sm-2 control-label">Customer</label>
+            <div class="col-sm-10">
+                <select id="Customer" class="form-control" ng-model="newOrder.customer" ng-options="customer.label for customer in newOrderCustomer" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Model" class="col-sm-2 control-label">Model</label>
+            <div class="col-sm-10">
+                <select id="Model" class="form-control" ng-model="newOrder.model" ng-options="model.label for model in neworderModels" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Color" class="col-sm-2 control-label">Color</label>
+            <div class="col-sm-10">
+                <select id="Color" class="form-control" ng-model="newOrder.color" ng-options="color.label for color in neworderColors" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Type" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <select id="Type" class="form-control" ng-model="newOrder.type" ng-options="type.label for type in neworderTypes" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Diameter" class="col-sm-2 control-label">Diameter</label>
+            <div class="col-sm-10">
+                <select id="Diameter" class="form-control" ng-model="newOrder.diameter" ng-options="diameter.label for diameter in neworderDiameters" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Thread" class="col-sm-2 control-label">Thread</label>
+            <div class="col-sm-10">
+                <select id="Thread" class="form-control" ng-model="newOrder.thread" ng-options="thread.label for thread in neworderThreads" required ></select>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="Quantity" class="col-sm-2 control-label">Quantity</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" ng-model="newOrder.quantity" required/>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label for="orderIdentifier" class="col-sm-2 control-label">Order Identifier</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="newOrder.orderIdentifier" required/>
+            </div>
+        </div>
+        <div class="form-group form-group-sm" ng-repeat=" newOrderParam in newOrderParameters">
+            <label for="Thread" class="col-sm-2 control-label">{{newOrderParam.label}}</label>
+            <div class="col-sm-10">
+                <div class="well well-sm marginBottom-0px small padding-5px">{{newOrderParam.value}}</div>
+            </div>
+        </div>
+        <div class="form-group form-group-sm" ng-hide="orderParameters.length === 0">
+            <label for="NewParameter" class="col-sm-2 control-label">Parameter</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="newOrderParameter.value" ng-change="newOrderParameter.value"  aria-label="...">
+                    <div class="input-group-btn" uib-dropdown is-open="status.isopen">
+                        <button id="single-button" ng-disabled="!newOrderParameter.value" type="button" class="btn btn-info btn-sm" uib-dropdown-toggle ng-disabled="disabled">
+                            Select parameter name <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li role="menuitem" ng-repeat="parameter in orderParameters"><a ng-click="addParameter(parameter.value, parameter.label, $index)" href="#{{parameter.value}}" >{{parameter.label}} | {{$index}}</a></li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <!-- SUBMIT BUTTON -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success btn-sm pull-left" ng-disabled="addNewOrderForm.$invalid" >Add order</button>
+                <button type="button" class="btn btn-info btn-sm pull-right" ng-click="resetAddNewOrderForm()">Reset</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="closeModal()">Close</button>
+</div>
