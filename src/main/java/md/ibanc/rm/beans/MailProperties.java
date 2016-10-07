@@ -73,6 +73,10 @@ public class MailProperties {
             from = propFile.getProperty("from");
             user = propFile.getProperty("user");
             pass = propFile.getProperty("pass");
+            
+            
+            
+            
 
         } catch (IOException ex) {
             Logger.getLogger(MailProperties.class.getName()).log(Level.SEVERE, null, ex);
