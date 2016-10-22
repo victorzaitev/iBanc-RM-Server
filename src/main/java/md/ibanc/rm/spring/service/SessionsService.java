@@ -17,4 +17,6 @@ public interface SessionsService {
     public void save(Sessions sessions);
 
     public List findAll();
+    
+    public Sessions findSessionsByGuid(String guid);
 }

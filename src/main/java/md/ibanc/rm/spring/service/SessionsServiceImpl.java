@@ -36,4 +36,12 @@ public class SessionsServiceImpl implements SessionsService {
         return sessionsDAO.findAll();
     }
 
+    @Override
+     @Transactional
+    public Sessions findSessionsByGuid(String guid) {
+         return sessionsDAO.findSessionsByGuid(guid);
+        
+
+    }
+
 }

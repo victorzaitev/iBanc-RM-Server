@@ -74,4 +74,30 @@ public class SingInOutSessionsDAOImpl extends AbstractSpringDao implements SingI
 
     }
 
+    @Override
+    public SingInOutSessions findSingInOutSessionsBySessionsGuid(String guid) {
+        SingInOutSessions singInOutSessions = null;
+
+        Session session = this.sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery(" "
+                + " SELECT  singInOutSessions FROM SingInOutSessions singInOutSessions "
+                + "  WHERE  singInOutSessions.sessions.sessionUid=:Guid "
+        );
+
+        query.setString("Guid", guid);
+
+        List list = query.list();
+
+        if (list != null && list.size() > 0) {
+            singInOutSessions = (SingInOutSessions) list.get(0);
+        }
+
+        return singInOutSessions;
+       
+
+
+
+    }
+
 }

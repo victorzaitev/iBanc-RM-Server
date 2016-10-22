@@ -80,4 +80,10 @@ public class SingInOutSessionsServiceImpl implements SingInOutSessionsService {
         return singInOutSessionsDAO.findById(id);
     }
 
+    @Override
+    @Transactional
+    public SingInOutSessions findSingInOutSessionsBySessionsGuid(String guid) {
+        return singInOutSessionsDAO.findSingInOutSessionsBySessionsGuid(guid);
+    }
+
 }

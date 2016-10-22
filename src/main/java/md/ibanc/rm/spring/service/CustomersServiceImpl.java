@@ -5,9 +5,14 @@
  */
 package md.ibanc.rm.spring.service;
 
+import java.util.Date;
 import java.util.List;
 import md.ibanc.rm.entities.Customers;
+import md.ibanc.rm.entities.Sessions;
+import md.ibanc.rm.entities.SingInOutSessions;
 import md.ibanc.rm.spring.dao.CustomersDAO;
+import md.ibanc.rm.spring.dao.SessionsDAO;
+import md.ibanc.rm.spring.dao.SingInOutSessionsDAO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,9 +24,19 @@ import org.springframework.transaction.annotation.Transactional;
 public class CustomersServiceImpl implements CustomersService {
 
     private CustomersDAO customersDAO;
+    private SessionsDAO sessionsDAO;
+    private SingInOutSessionsDAO singInOutSessionsDAO;
 
     public void setCustomersDAO(CustomersDAO customersDAO) {
         this.customersDAO = customersDAO;
+    }
+
+    public void setSessionsDAO(SessionsDAO sessionsDAO) {
+        this.sessionsDAO = sessionsDAO;
+    }
+
+    public void setSingInOutSessionsDAO(SingInOutSessionsDAO singInOutSessionsDAO) {
+        this.singInOutSessionsDAO = singInOutSessionsDAO;
     }
 
     @Override
@@ -40,6 +55,19 @@ public class CustomersServiceImpl implements CustomersService {
     @Transactional
     public Customers findCustomersByEmail(String email) {
         return customersDAO.findCustomersByEmail(email);
+    }
+
+    @Override
+    @Transactional
+    public boolean logout(String guid, String token) {
+        Sessions sessions = sessionsDAO.findSessionsByGuid(guid);
+
+        SingInOutSessions singInOutSessions = singInOutSessionsDAO.findSingInOutSessionsBySessionsGuid(guid);
+        singInOutSessions.setSingOutDate(new Date());
+        singInOutSessionsDAO.save(singInOutSessions);
+
+        return true;
+
     }
 
 }

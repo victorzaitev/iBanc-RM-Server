@@ -87,7 +87,7 @@ public class CustomersValidator {
             return;
         }
 
-        String hashPassword = UtilHashMD5.createMD5Hash(FormatPassword.CreatePassword((int) customers.getId(), loginForm.getmPassword()));
+        String hashPassword = UtilHashMD5.createMD5Hash(FormatPassword.CreatePassword(customers.getRegisteDate().getSeconds(), loginForm.getmPassword()));
 
         if (!hashPassword.equals(customers.getPassword())) {
             CustomersDetails customersDetails = new CustomersDetails();

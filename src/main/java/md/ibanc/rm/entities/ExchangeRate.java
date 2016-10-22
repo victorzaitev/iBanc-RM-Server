@@ -1,7 +1,6 @@
 package md.ibanc.rm.entities;
 // Generated Aug 24, 2016 4:57:31 PM by Hibernate Tools 4.3.1
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
@@ -60,7 +59,6 @@ public class ExchangeRate implements java.io.Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "valutaId")
-     @JsonIgnore
     public Valuta getValuta() {
         return this.valuta;
     }

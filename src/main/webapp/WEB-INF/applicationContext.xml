@@ -159,7 +159,15 @@
     <bean id="statusDAO" class="md.ibanc.rm.spring.dao.StatusDAOImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+    
+    <bean id="cityDAO" class="md.ibanc.rm.spring.dao.CityDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>       
+    </bean>
 
+
+    <bean id="languagesDAO" class="md.ibanc.rm.spring.dao.LanguagesDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
     
     <!-- ========================== Service object Definition ========================================== -->
     
@@ -173,6 +181,8 @@
     
     <bean id="customersService" class="md.ibanc.rm.spring.service.CustomersServiceImpl">
         <property name="customersDAO" ref="customersDAO"></property>
+        <property name="sessionsDAO" ref="sessionDAO"></property>
+        <property name="singInOutSessionsDAO" ref="singInOutSessionsDAO"></property>
     </bean>
     
     <bean id="sessionsService" class="md.ibanc.rm.spring.service.SessionsServiceImpl">
@@ -213,6 +223,14 @@
     
     <bean id="statusService" class="md.ibanc.rm.spring.service.StatusServiceImpl">
         <property name="statusDAO" ref="statusDAO"></property>
+    </bean>
+    
+    <bean id="cityService" class="md.ibanc.rm.spring.service.CityServiceImpl">
+        <property name="cityDAO" ref="cityDAO"></property>
+    </bean>
+    
+    <bean id="languagesService" class="md.ibanc.rm.spring.service.LanguagesServiceImpl">
+        <property name="languagesDAO" ref="languagesDAO"></property>
     </bean>
     
 </beans>

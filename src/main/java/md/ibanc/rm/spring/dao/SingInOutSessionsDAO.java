@@ -23,4 +23,6 @@ public interface SingInOutSessionsDAO {
     public boolean findSingInOutSessionsByCustomersAndDevices(Customers customers, Devices devices);
 
     public SingInOutSessions findById(long id);
+    
+    public SingInOutSessions findSingInOutSessionsBySessionsGuid(String guid);
 }

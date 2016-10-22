@@ -6,19 +6,17 @@
 package md.ibanc.rm.spring.service;
 
 import java.util.List;
-import md.ibanc.rm.entities.Customers;
+import md.ibanc.rm.entities.City;
 
 /**
  *
- * @author Zaițev.Victor
+ * @author PC01017745
  */
-public interface CustomersService {
+public interface CityService {
 
-    public void save(Customers customers);
+    public void save(City city);
 
     public List findAll();
 
-    public Customers findCustomersByEmail(String email);
-
-    public boolean logout(String guid, String token);
+    public City findCityByName(String nameCity);
 }

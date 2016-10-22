@@ -6,17 +6,19 @@
 package md.ibanc.rm.spring.dao;
 
 import java.util.List;
-import md.ibanc.rm.entities.Sessions;
+import md.ibanc.rm.entities.City;
 
 /**
  *
- * @author Zaițev.Victor
+ * @author PC01017745
  */
-public interface SessionsDAO {
-
-    public void save(Sessions sessions);
+public interface CityDAO {
+    
+    public void save(City city);
 
     public List findAll();
 
-    public Sessions findSessionsByGuid(String guid);
+    public City findCityByName(String nameCity);
+    
+    
 }

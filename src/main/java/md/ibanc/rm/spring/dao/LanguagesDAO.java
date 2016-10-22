@@ -6,17 +6,17 @@
 package md.ibanc.rm.spring.dao;
 
 import java.util.List;
-import md.ibanc.rm.entities.Sessions;
+import md.ibanc.rm.entities.Languages;
 
 /**
  *
- * @author Zaițev.Victor
+ * @author PC01017745
  */
-public interface SessionsDAO {
+public interface LanguagesDAO {
 
-    public void save(Sessions sessions);
+    public void save(Languages languages);
 
     public List findAll();
 
-    public Sessions findSessionsByGuid(String guid);
+    public Languages findLanguagesByShortName(String shortName);
 }

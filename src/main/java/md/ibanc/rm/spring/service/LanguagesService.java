@@ -6,19 +6,17 @@
 package md.ibanc.rm.spring.service;
 
 import java.util.List;
-import md.ibanc.rm.entities.Customers;
+import md.ibanc.rm.entities.Languages;
 
 /**
  *
- * @author Zaițev.Victor
+ * @author PC01017745
  */
-public interface CustomersService {
+public interface LanguagesService {
 
-    public void save(Customers customers);
+    public void save(Languages languages);
 
     public List findAll();
 
-    public Customers findCustomersByEmail(String email);
-
-    public boolean logout(String guid, String token);
+    public Languages findLanguagesByShortName(String shortName);
 }
