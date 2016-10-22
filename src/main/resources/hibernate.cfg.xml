@@ -4,9 +4,9 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://172.18.111.101:1433;databaseName=iBancRM</property>
-        <property name="hibernate.connection.username">maib-dds</property>
-        <property name="hibernate.connection.password">p@ssw0rd</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=iBancRM</property>
+        <property name="hibernate.connection.username">victor</property>
+        <property name="hibernate.connection.password">123456789</property>
         <mapping class="md.ibanc.rm.entities.Accounts"/>
         <mapping class="md.ibanc.rm.entities.Status"/>
         <mapping class="md.ibanc.rm.entities.ExchangeRate"/>
