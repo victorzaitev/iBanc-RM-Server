@@ -20,4 +20,6 @@ public class RetDescriptionConst {
     public final static String RETCOD_OK = "Success";
     public final static String PASSWORD_EXPIRE = "Parola a expirat";
     public final static String BLOCK_ACCOUNT = "Contule este blocat";
+    public final static String USERNAME_VALIDATION_ERROR = "Uername contine informatie eronata";
+    public final static String GUID_VALIDATION_ERROR = "guid este invalid";
 }

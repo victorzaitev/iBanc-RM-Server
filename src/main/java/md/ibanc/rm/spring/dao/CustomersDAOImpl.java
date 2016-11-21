@@ -50,4 +50,76 @@ public class CustomersDAOImpl extends AbstractSpringDao implements CustomersDAO 
 
     }
 
+    @Override
+    public Customers findCustomersByUserName(String userName) {
+        Customers customers = null;
+
+        Session session = this.sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery(" SELECT customers FROM Customers customers "
+                + " WHERE  customers.email=:UserName "
+        );
+
+        query.setString("UserName", userName);
+
+        List list = query.list();
+
+        if (list != null && list.size() > 0) {
+            customers = (Customers) list.get(0);
+        }
+
+        return customers;
+
+    }
+
+    @Override
+    public Customers findCustomersByPersonalId(String personalId) {
+
+        Customers customers = null;
+
+        Session session = this.sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery(" SELECT customers FROM Customers customers "
+                + " WHERE  customers.personalId=:PersonalId "
+        );
+
+        query.setString("PersonalId", personalId);
+
+        List list = query.list();
+
+        if (list != null && list.size() > 0) {
+            customers = (Customers) list.get(0);
+        }
+
+        return customers;
+
+    }
+
+    @Override
+    public Customers findCustomersBySession(String guid, String token) {
+
+        Customers customers = null;
+
+        Session session = this.sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery(" SELECT customers FROM Customers customers, "
+                + "                                               Sessions sessions,"
+                + "                                               SingInOutSessions singInOutSessions "
+                + "                               WHERE sessions.id = singInOutSessions.sessions.id "
+                + "                                 AND customers.id = singInOutSessions.customers.id "
+                + "                                 AND sessions.sessionUid=:Guid "
+        );
+
+        query.setString("Guid", guid);
+
+        List list = query.list();
+
+        if (list != null && list.size() == 1) {
+            customers = (Customers) list.get(0);
+        }
+
+        return customers;
+
+    }
+
 }

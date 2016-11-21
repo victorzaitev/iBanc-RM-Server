@@ -169,6 +169,10 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
+    <bean id="cardsDAO" class="md.ibanc.rm.spring.dao.CardsDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
     <!-- ========================== Service object Definition ========================================== -->
     
     <bean id="exchangeRateService" class="md.ibanc.rm.spring.service.ExchangeRateServiceImpl">
@@ -233,4 +237,7 @@
         <property name="languagesDAO" ref="languagesDAO"></property>
     </bean>
     
+    <bean id="cardsService" class="md.ibanc.rm.spring.service.CardsServiceImpl">
+        <property name="cardsDAO" ref="cardsDAO"></property>
+    </bean>
 </beans>

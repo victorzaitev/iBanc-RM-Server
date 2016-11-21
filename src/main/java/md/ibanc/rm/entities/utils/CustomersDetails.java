@@ -22,7 +22,6 @@ public class CustomersDetails extends BaseEntity {
     private String phone;
     private Date registeDate;
     private String guid;
-    private String token;
 
     public CustomersDetails() {
     }
@@ -111,15 +110,5 @@ public class CustomersDetails extends BaseEntity {
     public void setGuid(String guid) {
         this.guid = guid;
     }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-    
-    
 
 }

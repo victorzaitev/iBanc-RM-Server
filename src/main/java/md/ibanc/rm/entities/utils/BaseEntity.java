@@ -15,6 +15,8 @@ public class BaseEntity {
 
     private String returnDescription;
 
+    private String token;
+
     public int getReturnCode() {
         return returnCode;
     }
@@ -29,6 +31,14 @@ public class BaseEntity {
 
     public void setReturnDescription(String returnDescription) {
         this.returnDescription = returnDescription;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
 }

@@ -21,4 +21,10 @@ public interface CustomersService {
     public Customers findCustomersByEmail(String email);
 
     public boolean logout(String guid, String token);
+
+    public Customers findCustomersByUserName(String userName);
+
+    public Customers findCustomersByPersonalId(String personalId);
+    
+    public Customers findCustomersBySession(String guid, String token);
 }

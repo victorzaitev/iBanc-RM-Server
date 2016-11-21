@@ -70,4 +70,23 @@ public class CustomersServiceImpl implements CustomersService {
 
     }
 
+    @Override
+    @Transactional
+    public Customers findCustomersByUserName(String userName) {
+        return customersDAO.findCustomersByUserName(userName);
+    }
+
+    @Override
+    @Transactional
+    public Customers findCustomersByPersonalId(String personalId) {
+        return customersDAO.findCustomersByPersonalId(personalId);
+
+    }
+
+    @Override
+    @Transactional
+    public Customers findCustomersBySession(String guid, String token) {
+        return customersDAO.findCustomersBySession(guid, token);
+    }
+
 }

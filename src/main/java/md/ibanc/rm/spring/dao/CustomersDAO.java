@@ -19,4 +19,10 @@ public interface CustomersDAO {
     public List findAll();
 
     public Customers findCustomersByEmail(String email);
+
+    public Customers findCustomersByUserName(String userName);
+
+    public Customers findCustomersByPersonalId(String personalId);
+
+    public Customers findCustomersBySession(String guid, String token);
 }
