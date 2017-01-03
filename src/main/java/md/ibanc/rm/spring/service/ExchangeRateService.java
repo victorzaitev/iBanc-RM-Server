@@ -5,8 +5,10 @@
  */
 package md.ibanc.rm.spring.service;
 
+import java.util.Date;
 import java.util.List;
 import md.ibanc.rm.entities.ExchangeRate;
+import md.ibanc.rm.entities.utils.ExchangeRateList;
 
 /**
  *
@@ -18,4 +20,5 @@ public interface ExchangeRateService {
 
     public List findAll();
 
+    public List<ExchangeRateList> findExchangeRateByDate(Date date);
 }

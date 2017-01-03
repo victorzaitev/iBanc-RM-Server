@@ -5,20 +5,16 @@
  */
 package md.ibanc.rm.spring.dao;
 
-import java.util.Date;
 import java.util.List;
-import md.ibanc.rm.entities.ExchangeRate;
+import md.ibanc.rm.entities.NewsCategory;
 
 /**
  *
  * @author Zaițev.Victor
  */
-public interface ExchangeRateDAO {
+public interface NewsCategoryDAO {
 
-    public void save(ExchangeRate exchangeRate);
+    public void save(NewsCategory newsCategory);
 
     public List findAll();
-
-    public List findExchangeRateByDate(Date date);
-
 }

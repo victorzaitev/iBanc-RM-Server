@@ -5,8 +5,12 @@
  */
 package md.ibanc.rm.spring.dao;
 
+import java.util.Date;
 import java.util.List;
+
 import md.ibanc.rm.entities.ExchangeRate;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -24,6 +28,22 @@ public class ExchangeRateDAOImpl extends AbstractSpringDao implements ExchangeRa
     @Override
     public List findAll() {
         return super.findAll(ExchangeRate.class);
+    }
+
+    @Override
+    public List findExchangeRateByDate(Date date) {
+
+        Session session = this.sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery(" SELECT exchangeRate FROM ExchangeRate exchangeRate "
+                + " WHERE  exchangeRate.dataIns=:Date "
+        );
+
+        query.setDate("Date", date);
+
+        List list = query.list();
+
+        return list;
     }
 
 }

@@ -9,11 +9,13 @@ import java.util.List;
 import md.ibanc.rm.entities.Cards;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author PC01017745
  */
+@Repository
 public class CardsDAOImpl extends AbstractSpringDao implements CardsDAO {
 
     @Override

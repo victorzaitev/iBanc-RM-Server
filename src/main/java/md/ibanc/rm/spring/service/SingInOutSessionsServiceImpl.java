@@ -5,6 +5,8 @@
  */
 package md.ibanc.rm.spring.service;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -51,7 +53,11 @@ public class SingInOutSessionsServiceImpl implements SingInOutSessionsService {
     @Transactional
     public SingInOutSessions save(String guidId, Customers customers, HttpServletRequest request) {
         Sessions sessions = new Sessions();
-        sessions.setCreatedAt(new Date());
+
+        Calendar cal = Calendar.getInstance();  
+        Timestamp timestamp = new Timestamp(cal.getTimeInMillis());
+        
+        sessions.setCreatedAt(timestamp);
         sessions.setSessionUid(guidId);
 
         sessionsDAO.save(sessions);
@@ -59,7 +65,7 @@ public class SingInOutSessionsServiceImpl implements SingInOutSessionsService {
         SingInOutSessions singInOutSessions = new SingInOutSessions();
         singInOutSessions.setCustomers(customers);
         singInOutSessions.setSessions(sessions);
-        singInOutSessions.setSingInDate(new Date());
+        singInOutSessions.setSingInDate(timestamp);
         singInOutSessions.setIp(request.getRemoteAddr());
         singInOutSessions.setLocation(request.getRemoteUser());
 

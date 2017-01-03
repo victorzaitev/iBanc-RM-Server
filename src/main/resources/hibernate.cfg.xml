@@ -41,7 +41,8 @@
         <mapping class="md.ibanc.rm.entities.form.LoginForm"/>
         <mapping class="md.ibanc.rm.entities.utils.BaseEntity"/>
         <mapping class="md.ibanc.rm.entities.utils.CustomersDetails"/>
-    
+        <mapping class="md.ibanc.rm.entities.NewsCategory"/>
+        <mapping class="md.ibanc.rm.entities.Cards"/>
         <mapping class="md.ibanc.rm.entities.Message"/>
         <mapping class="md.ibanc.rm.entities.SendMessage"/>
         <mapping class="md.ibanc.rm.entities.TypeMessage"/>

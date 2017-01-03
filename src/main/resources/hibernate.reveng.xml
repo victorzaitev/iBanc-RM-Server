@@ -38,6 +38,7 @@
     <table-filter match-name="TypeMessage"/>
     <table-filter match-name="Message"/>
     <table-filter match-name="SendMessage"/>
+    <table-filter match-name="NewsCategory"/>
   
   
 </hibernate-reverse-engineering>

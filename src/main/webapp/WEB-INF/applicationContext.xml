@@ -86,6 +86,7 @@
                 <value>md.ibanc.rm.entities.Message</value>
                 <value>md.ibanc.rm.entities.SendMessage</value>
                 <value>md.ibanc.rm.entities.TypeMessage</value>
+                <value>md.ibanc.rm.entities.NewsCategory</value>
                 
             </list>
         </property>
@@ -173,6 +174,11 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
+    
+    <bean id="newsCategoryDAO" class="md.ibanc.rm.spring.dao.NewsCategoryDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
     <!-- ========================== Service object Definition ========================================== -->
     
     <bean id="exchangeRateService" class="md.ibanc.rm.spring.service.ExchangeRateServiceImpl">
@@ -240,4 +246,10 @@
     <bean id="cardsService" class="md.ibanc.rm.spring.service.CardsServiceImpl">
         <property name="cardsDAO" ref="cardsDAO"></property>
     </bean>
+    
+    <bean id="newsCategoryService" class="md.ibanc.rm.spring.service.NewsCategoryServiceImpl">
+        <property name="newsCategoryDAO" ref="newsCategoryDAO"></property>        
+    </bean>
+    
+    
 </beans>
